@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p></p>
+    <script>
+      //object literal
+      //PROBLEM : Tidak efektif utk jumlah banyak
+      let orang = {
+        nama: "Floda Reltih",
+        energi: 10,
+        makan: function (porsi) {
+          this.energi += porsi;
+          console.log(`Selamat makan ${this.nama}, energi kamu sekarang ${this.energi}`);
+          return;
+        },
+      };
+      let orang2 = {
+        nama: "Otihorih",
+        energi: 8,
+        makan: function (porsi) {
+          this.energi += porsi;
+          console.log(`Selamat makan ${this.nama}, energi kamu sekarang ${this.energi}`);
+          return;
+        },
+        main: function (jam) {
+          this.energi -= jam;
+          console.log(`Kamu sudah bermain selama ${jam} jam, energi kamu sekarang ${this.energi}`);
+          return;
+        },
+      };
+
+      //function declaration
+      //PROBLEM : Secara penulisan memang lebih simpel dari diatas, tapi di belakang layar sama saja
+      function Hyumen(nama, energi) {
+        let hyumen = {};
+        hyumen.nama = nama;
+        hyumen.energi = energi;
+
+        hyumen.makan = function (porsi) {
+          this.energi += porsi;
+          console.log(`Selamat makan ${this.nama}, energi kamu sekarang ${this.energi}`);
+        };
+        hyumen.main = function (jam) {
+          this.energi -= jam;
+          console.log(`Kamu sudah bermain selama ${jam} jam, energi kamu sekarang ${this.energi}`);
+        };
+        return hyumen; //this is required
+      }
+      let otihorih = Hyumen("Otihorih", 8);
+      let reltih = Hyumen("Floda Reltih", 10);
+
+      //keyword new
+      function Hiyumen(nama, energi) {
+        this.nama = nama;
+        this.energi = energi;
+
+        this.makan = function (porsi) {
+          this.energi += porsi;
+          console.log(`Selamat makan ${this.nama}, energi kamu sekarang ${this.energi}`);
+        };
+        this.main = function (jam) {
+          this.energi -= jam;
+          console.log(`Kamu sudah bermain selama ${jam} jam, energi kamu sekarang ${this.energi}`);
+        };
+      }
+
+      let otineb = new Hiyumen("Otineb Inilossum", 5);
+    </script>
+  </body>
+</html>

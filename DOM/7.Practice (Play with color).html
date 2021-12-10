@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .toggle {
+        background-color: aqua;
+      }
+      .kotak {
+        width: 30px;
+        height: 30px;
+      }
+      .merah {
+        background-color: red;
+      }
+      .hijau {
+        background-color: green;
+      }
+      .biru {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div align="center">
+      <h1>Bermain dengan warna</h1>
+      <button class="tUbahWarna">Ubah Warna</button>
+      <button class="tAcakWarna">Acak Warna</button><br /><br /><br />
+
+      <div class="kotak merah"></div>
+      <input type="range" name="sMerah" min="0" max="255" /><br />
+
+      <div class="kotak hijau"></div>
+      <input type="range" name="sHijau" min="0" max="255" /><br />
+
+      <div class="kotak biru"></div>
+      <input type="range" name="sBiru" min="0" max="255" /><br />
+    </div>
+
+    <script>
+      // button ubah warna
+      const tUbahWarna = document.getElementsByTagName("button")[0];
+      const body = document.body;
+      tUbahWarna.onclick = function () {
+        body.classList.toggle("toggle");
+      };
+
+      //   button acak warna
+      const tAcakWarna = document.querySelector(".tAcakWarna");
+      tAcakWarna.addEventListener("click", function () {
+        const r = Math.round(Math.random() * 255 - 1);
+        const g = Math.round(Math.random() * 255 - 1);
+        const b = Math.round(Math.random() * 255 - 1);
+        body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+      });
+
+      //   range warna
+      const sMerah = document.querySelector("input[name=sMerah]");
+      sMerah.addEventListener("input", function () {
+        const r = sMerah.value;
+        const g = sHijau.value;
+        const b = sBiru.value;
+        document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+      });
+
+      const sHijau = document.querySelector("input[name=sHijau]");
+      sHijau.addEventListener("input", function () {
+        const r = sMerah.value;
+        const g = sHijau.value;
+        const b = sBiru.value;
+        document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+      });
+
+      const sBiru = document.querySelector("input[name=sBiru]");
+      sBiru.addEventListener("input", function () {
+        const r = sMerah.value;
+        const g = sHijau.value;
+        const b = sBiru.value;
+        document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+      });
+    </script>
+  </body>
+</html>

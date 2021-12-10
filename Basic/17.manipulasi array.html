@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var arr = ["sugiono", "meliodas", "widodo"];
+
+      //menambahkan array
+      arr[3] = "abdul";
+      arr[5] = "thorfinn"; //arr 4 undefined karena dilompat
+
+      //menghapus array
+      arr[1] = undefined;
+
+      console.log(arr);
+
+      //menampilkan isi array
+      for (var i = 1; i < arr.length; i++) {
+        console.log("Mahasiswa ke " + i + " " + arr[i]);
+      }
+    </script>
+  </body>
+</html>

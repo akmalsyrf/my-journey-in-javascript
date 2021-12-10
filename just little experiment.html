@@ -1,0 +1,16 @@
+<script>
+  function express() {
+    return {
+      use: (param) => {
+        console.log(param);
+      },
+      json: () => {
+        console.log("youre success");
+      },
+    };
+  }
+
+  const app = express();
+
+  app.use(app.json());
+</script>

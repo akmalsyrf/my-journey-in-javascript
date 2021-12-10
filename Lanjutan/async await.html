@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1></h1>
+    <script>
+      // function cobaPromise() {
+      //   return new Promise((resolve) => {
+      //     setTimeout(() => {
+      //       resolve("selesai");
+      //     }, 2000);
+      //   });
+      // }
+
+      // // const coba = cobaPromise();
+      // // console.log(coba); //tidak bisa dijalankan seperti ini
+      // // coba.then((res) => console.log(res)); //hanya bisa dijalankan seperti ini
+
+      // async function cobaAsync() {
+      //   const coba = await cobaPromise();
+      //   console.log(coba); //sekarang bisa dijalankan seperti ini
+      // }
+
+      // cobaAsync();
+
+      `------------------------------------------------------------------------------------------------------------`;
+
+      function cobaPromise() {
+        return new Promise((resolve, reject) => {
+          const waktu = 2000;
+          if (waktu < 5000) {
+            setTimeout(() => {
+              resolve("selesai");
+            }, waktu);
+          } else {
+            reject("Kelamaan!");
+          }
+        });
+      }
+
+      // const coba = cobaPromise();
+      // coba
+      //   .then((res) => console.log(res))
+      //   .catch((res) => console.log(res));
+
+      async function cobaAsync() {
+        try {
+          const coba = await cobaPromise();
+          console.log(coba);
+        } catch (err) {
+          console.log(err);
+        }
+      }
+
+      cobaAsync();
+    </script>
+  </body>
+</html>

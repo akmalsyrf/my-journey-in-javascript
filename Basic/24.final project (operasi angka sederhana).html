@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var angka1 = parseInt(prompt("Masukkan angka:"));
+      var operasi = parseInt(prompt("Operasi yang dipilih: (pilih dengan angka)\n1.Penjumlahan\n2.Pengurangan\n3.Perkalian\n4.Pembagian\n5.Pangkat 2\n6.Persen"));
+
+      var input2 = parseInt(prompt("Masukkan angka kedua"));
+      function angka2() {
+        return input2;
+      }
+      function penjumlahan(a, b) {
+        const hasil = a + b;
+        alert("Hasilnya: " + hasil);
+      }
+      function pengurangan(a, b) {
+        const hasil = a - b;
+        alert("Hasilnya: " + hasil);
+      }
+      function perkalian(a, b) {
+        const hasil = a * b;
+        alert("Hasilnya: " + hasil);
+      }
+      function pembagian(a, b) {
+        const hasil = a / b;
+        alert("Hasilnya: " + hasil);
+      }
+
+      function pemangkatan(a) {
+        const hasil = a * a;
+        alert("Hasilnya: " + hasil);
+      }
+
+      function persen(a) {
+        const hasil = a / 100;
+        alert("Hasilnya: " + hasil);
+      }
+
+      if (operasi === 1) {
+        angka2();
+        penjumlahan(angka1, input2);
+      } else if (operasi === 2) {
+        angka2();
+        pengurangan(angka1, input2);
+      } else if (operasi === 3) {
+        angka2();
+        perkalian(angka1, input2);
+      } else if (operasi === 4) {
+        angka2();
+        pembagian(angka1, input2);
+      } else if (operasi === 5) {
+        pemangkatan(angka1);
+      } else if (operasi === 6) {
+        persen(angka1);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1. HTML Fragments
+      // const saha = {
+      //   nama: "Adolf hitler",
+      //   umur: 17,
+      //   lahir: "Jerman",
+      // };
+      // const e = `
+      // <div>
+      //   <h2>${saha.nama}</h2>
+      //   <span class="born">${saha.lahir}</span>
+      // </div>`;
+
+      //2.Looping
+      // const sDeadlySins = [
+      //   {
+      //     nama: "Meliodas",
+      //     umur: 69,
+      //   },
+      //   {
+      //     nama: "Bang",
+      //     umur: 68,
+      //   },
+      //   {
+      //     nama: "Diane",
+      //     umur: 67,
+      //   },
+      // ];
+
+      // const el = `
+      //   <div>
+      //     ${sDeadlySins
+      //       .map(
+      //         (s) => `
+      //       <ul>
+      //         <li>${s.nama}</li>
+      //       </ul>
+      //       `
+      //       )
+      //       .join("")}
+      //   </div>`;
+      // document.body.innerHTML = el;
+
+      //3.Conditional ternary
+      // const lagu = {
+      //   judul: "Kau adalah",
+      //   penyanyi: "Isyana Sarasvati",
+      //   feat: "Rayi Putra",
+      // };
+
+      // const el = `
+      // <div>
+      //   <ul>
+      //     <li>${lagu.penyanyi}</li>
+      //     <li>${lagu.judul} ${lagu.feat ? `feat. ${lagu.feat}` : ""}</li>
+      //   </ul>
+      // </div>
+      // `;
+
+      // document.body.innerHTML = el;
+
+      // 4.Nested
+      //HTML Fragments bersarang
+
+      const me = {
+        nama: "Meliodas",
+        umur: 69,
+        skill: ["Counter", "Full Counter", "Revenge"],
+      };
+      function listSkill(skill) {
+        return `
+        <ul>
+          ${skill.map((s) => `<li>${s}</li>`).join("")}
+        </ul>
+        `;
+      }
+
+      const el = `
+      <div>
+        <h2>${me.nama}</h2>
+        ${listSkill(me.skill)}
+      </div>
+      `;
+      document.body.innerHTML = el;
+    </script>
+  </body>
+</html>

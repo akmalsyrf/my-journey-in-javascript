@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let orang = ["Adolf Hitler", "Hirohito", "Benito Mussolini"];
+
+      //penulisan normal
+      // let jumlahHuruf = orang.map(function(nama){
+      //     return nama.length;
+      // });
+      // console.log(jumlahHuruf);
+
+      //arrow function
+      // let jumlahHuruf = orang.map(nama => nama.length);
+      // console.log(jumlahHuruf);
+
+      //arrow function jika property lebih dari satu
+      let jumlahHuruf = orang.map((nama) => ({ nama: nama, jmlhuruf: nama.length })); //kurawal yg dibalut di dalam kurung merupakan cara menulis object di arrow function
+      console.table(jumlahHuruf);
+    </script>
+  </body>
+</html>

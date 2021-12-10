@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator</title>
+
+    <!--CSS-->
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: sans-serif;
+      }
+
+      .display {
+        color: white;
+        width: 100%;
+        padding: 10px 20px;
+        background-color: #333333;
+        border: 1px solid black;
+        font-size: 2em;
+      }
+
+      .flex-container-column {
+        display: flex;
+        /* properti pendukung */
+        flex-direction: column;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: right;
+      }
+
+      .flex-container-row {
+        display: flex;
+      }
+
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        padding: 30px;
+        margin-top: 20px;
+      }
+
+      .button {
+        flex-basis: 25%;
+        /* properti pendukung */
+        font-size: 1.5em;
+        text-align: center;
+        padding: 40px;
+        border: 1px solid black;
+        background: #ddd;
+        cursor: pointer;
+      }
+
+      .button:hover {
+        font-weight: bold;
+      }
+
+      .negative,
+      .operator,
+      .equals {
+        background-color: orange;
+      }
+
+      .double {
+        flex-basis: 50%;
+      }
+
+      @media screen and (max-width: 513px) {
+        .button {
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="flex-container-column card">
+      <div class="display">
+        <h1 id="displayNumber">0</h1>
+      </div>
+      <div class="flex-container-row">
+        <div class="button">7</div>
+        <div class="button">8</div>
+        <div class="button">9</div>
+        <div class="button negative">+/-</div>
+      </div>
+      <div class="flex-container-row">
+        <div class="button">4</div>
+        <div class="button">5</div>
+        <div class="button">6</div>
+        <div class="button operator">-</div>
+      </div>
+      <div class="flex-container-row">
+        <div class="button">1</div>
+        <div class="button">2</div>
+        <div class="button">3</div>
+        <div class="button operator">+</div>
+      </div>
+      <div class="flex-container-row">
+        <div class="button clear">CE</div>
+        <div class="button">0</div>
+        <div class="button equals double">=</div>
+      </div>
+    </div>
+
+    <!--JS kalkulator-->
+    <script>
+      const calculator = {
+        displayNumber: "0",
+        operator: null,
+        firstNumber: null,
+        waitingForSecondNumber: false,
+      };
+
+      function updateDisplay() {
+        document.querySelector("#displayNumber").innerText = calculator.displayNumber;
+      }
+
+      function clearCalculator() {
+        calculator.displayNumber = "0";
+        calculator.operator = null;
+        calculator.firstNumber = null;
+        calculator.waitingForSecondNumber = false;
+      }
+
+      function inputDigit(digit) {
+        if (calculator.displayNumber === "0") {
+          calculator.displayNumber = digit;
+        } else {
+          calculator.displayNumber += digit;
+        }
+      }
+
+      function inverseNumber() {
+        if (calculator.displayNumber === "0") {
+          return;
+        }
+        calculator.displayNumber = calculator.displayNumber * -1;
+      }
+
+      function handleOperator(operator) {
+        if (!calculator.waitingForSecondNumber) {
+          calculator.operator = operator;
+          calculator.waitingForSecondNumber = true;
+          calculator.firstNumber = calculator.displayNumber;
+          calculator.displayNumber = "0";
+        } else {
+          alert("Operator sudah ditetapkan");
+        }
+      }
+
+      function performCalculation() {
+        if (calculator.firstNumber == null || calculator.operator == null) {
+          alert("Anda belum menetapkan operator");
+          return;
+        }
+
+        let result = 0;
+        if (calculator.operator === "+") {
+          result = parseInt(calculator.firstNumber) + parseInt(calculator.displayNumber);
+        } else {
+          result = parseInt(calculator.firstNumber) - parseInt(calculator.displayNumber);
+        }
+
+        calculator.displayNumber = result;
+      }
+
+      const buttons = document.querySelectorAll(".button");
+      for (let button of buttons) {
+        button.addEventListener("click", function (event) {
+          // mendapatkan objek elemen yang diklik
+          const target = event.target;
+
+          if (target.classList.contains("clear")) {
+            clearCalculator();
+            updateDisplay();
+            return;
+          }
+
+          if (target.classList.contains("negative")) {
+            inverseNumber();
+            updateDisplay();
+            return;
+          }
+
+          if (target.classList.contains("equals")) {
+            performCalculation();
+            updateDisplay();
+            return;
+          }
+
+          if (target.classList.contains("operator")) {
+            handleOperator(target.innerText);
+            return;
+          }
+
+          inputDigit(target.innerText);
+          updateDisplay();
+        });
+      }
+    </script>
+  </body>
+</html>

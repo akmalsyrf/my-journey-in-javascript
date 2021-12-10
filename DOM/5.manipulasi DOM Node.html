@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dom Selection</title>
+    <style>
+      * {
+        border: 2px solid #dedede;
+        padding: 15px;
+        margin: 15px;
+      }
+      html {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        max-width: 600px;
+        margin: 30px auto;
+        font-family: sans-serif;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="judul">Hello World</h1>
+    <div id="container">
+      <section id="a">
+        <p class="p1">paragraf 1</p>
+        <a href="http://instagram.com/ossas">Instagram Ossas</a>
+        <p class="p2">paragraf 2</p>
+        <p class="p3" onclick="ubahWarna()">paragraf 3</p>
+      </section>
+      <section id="b">
+        <p class="p4">paragraf 4</p>
+        <ul>
+          <li>item 1</li>
+          <li>item 2</li>
+          <li>item 3</li>
+        </ul>
+      </section>
+    </div>
+
+    <script>
+      //buat elemen baru
+      const pBaru = document.createElement("p");
+      const textForP = document.createTextNode("Khusus elemen dan text ini dibuat di Javascript");
+
+      //simpan tulisan ke tag p baru
+      pBaru.appendChild(textForP);
+
+      //simpan p baru di akhir
+      const tempatNaro = document.getElementsByTagName("section")[0];
+      tempatNaro.appendChild(pBaru);
+
+      //
+
+      //test case lain dengan node.insertBefore()
+      const liBaru = document.createElement("li");
+      const textForLi = document.createTextNode("Ini list tiri");
+      liBaru.appendChild(textForLi);
+
+      const tempatNaro2 = document.querySelector("section#b ul");
+      const li2 = document.querySelector(" li:nth-child(2)");
+      tempatNaro2.insertBefore(liBaru, li2);
+
+      /*sebenernya bisa juga pake ini
+      const tempatNaro2 = document.querySelectorAll('section#b ul li:nth-child(2)');
+      tempatNaro2.appendChild(liBaru);*/
+
+      const h1 = document.querySelector("h1");
+      const body = document.querySelector("body");
+
+      const h2Baru = document.createElement("h2");
+      const textForH2 = document.createTextNode("Ini judul !!Javascript Invasion!!");
+      h2Baru.appendChild(textForH2);
+      body.replaceChild(h2Baru, h1);
+
+      tempatNaro.style.backgroundColor = "lightblue";
+      tempatNaro2.style.backgroundColor = "lightblue";
+      //   body.style.backgroundColor = "lightblue";
+    </script>
+  </body>
+</html>

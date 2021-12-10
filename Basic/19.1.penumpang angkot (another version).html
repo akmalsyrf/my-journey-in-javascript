@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var penumpang = [];
+      function tambahPenumpang(namaPenumpang) {
+        for (var i = 0; i < penumpang.length; i++) {
+          if (penumpang[i] == null) {
+            penumpang.splice(i, 1, namaPenumpang);
+          }
+        }
+        penumpang.push(namaPenumpang);
+        alert("Penumpang saat ini:\n" + penumpang);
+        return true;
+      }
+
+      function hapusPenumpang(namaPenumpang) {
+        var i = penumpang.indexOf(namaPenumpang);
+        if (penumpang[i] == null) {
+          alert(`WARNING!!!\nNama ` + namaPenumpang + ` tidak ada didalam Angkot!!!`);
+        } else {
+          penumpang.splice(i, 1, null);
+        }
+        alert("Penumpang saat ini:\n" + penumpang);
+        return true;
+      }
+
+      for (var lagi = true; lagi === true; lagi = confirm("Menaikkan atau menurunkan penumpang lagi?")) {
+        var nama = parseInt(prompt("Kamu mau menaikkan atau menurunkan penumpang?\n1.Menaikkan\n2.Menurunkan"));
+        if (nama === 1) {
+          var namaPenumpang = prompt("Masukkan nama penumpang baru:");
+          tambahPenumpang(namaPenumpang);
+        } else if (nama === 2) {
+          var namaPenumpang = prompt("Siapa penumpang yang mau kamu turunkan?");
+          hapusPenumpang(namaPenumpang);
+        }
+      }
+    </script>
+  </body>
+</html>

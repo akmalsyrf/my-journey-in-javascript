@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //memperhatikan urutan
+      // function kalkulasi(a,b){
+      //     return [a+b, a-b, a*b, a/b];
+      // }
+      // const [tambah, kurang, kali, bagi] = kalkulasi(2,3);
+      // console.log(bagi);
+
+      //tidak memperdulikan urutan
+      function kalkulasi(a, b) {
+        return {
+          tambah: a + b,
+          kurang: a - b,
+          kali: a * b,
+          bagi: a / b,
+        };
+      }
+      const { bagi, kurang, tambah, kali } = kalkulasi(2, 3);
+      console.log(bagi);
+
+      `-------------------------------------------------------------------------------------------------------------------`;
+
+      //destructuring argument
+      const pasundan = {
+        nama: "Kian Santang",
+        umur: 69,
+        email: "yogs@mail.go",
+        nilai: {
+          tugas: 80,
+          uts: 85,
+          uas: 75,
+        },
+      };
+      function cetakPas({ nama, umur, nilai: { uas } }) {
+        return `Aku ${nama}, umurku ${umur} tahun. Nilai uasku ${uas}`;
+      }
+
+      console.log(cetakPas(pasundan));
+    </script>
+  </body>
+</html>

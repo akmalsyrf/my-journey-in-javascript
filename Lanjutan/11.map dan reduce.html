@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const angka = [-1, 4, 5, 9, 7, -6, 2, 3, -2];
+      //map
+      // const newAngka = angka.map((a) => a * 2);
+      // console.log(newAngka);
+
+      //reduce
+      //jumlahkan semua elemen array
+      //5 + -1 + 4 + 5 + 9 + 7 + -6 + 2 + 3 + -2
+      const newAngka = angka.reduce((accumulator, currentValue) => accumulator + currentValue, 5);
+      console.log(newAngka);
+
+      `------------------------------------------------------------------------------------------------------------------------`;
+
+      //lebih lanjut tentang reduce
+      const num = [10, 20, 30, 40];
+
+      num.reduce((previousValue, currentValue) => {
+        console.log({ previousValue, currentValue });
+      });
+    </script>
+  </body>
+</html>

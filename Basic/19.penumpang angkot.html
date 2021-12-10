@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let penumpang = [];
+      function tambahPenumpang() {
+        const nama = prompt("Masukkan nama penumpang yg ingin kamu naikkan:");
+        if (penumpang.length == 0) {
+          penumpang.push(nama);
+          return;
+        } else {
+          for (let i = 0; i <= penumpang.length - 1; i++) {
+            if (nama == penumpang[i]) {
+              alert(`${nama} sudah ada di angkot!`);
+              return;
+            } else if (nama !== penumpang[i]) {
+              penumpang.push(nama);
+              return;
+            }
+          }
+        }
+      }
+      function hapusPenumpang() {
+        const nama = prompt("Masukkan nama penumpang yg ingin kamu turunkan:");
+        if (penumpang.length == 0) {
+          alert("Penumpang kosong!");
+        } else {
+          for (let i = 0; i <= penumpang.length - 1; i++) {
+            if (nama == penumpang[i]) {
+              penumpang.splice(i, 1);
+              return;
+            }
+            //  else if (nama != penumpang[i]) {
+            //   alert("Nama yang kamu masukkan salah!");
+            //   return;
+            // }
+          }
+        }
+      }
+      for (let lagi = true; lagi == true; lagi = confirm("Menaikkan/menurunkan lagi?")) {
+        const tanya = parseInt(prompt("Kamu ingin menaikkan/menurunkan penumpang? (Pilih dengan angka)\n1.Menaikkan\n2.Menurunkan"));
+        if (tanya == 1) {
+          tambahPenumpang();
+          alert(`Penumpang saat ini :\n${penumpang}`);
+        } else if (tanya == 2) {
+          hapusPenumpang();
+          alert(`Penumpang saat ini :\n${penumpang}`);
+        } else {
+          alert("Masukkan inputan yg benar bgst!");
+        }
+      }
+    </script>
+  </body>
+</html>

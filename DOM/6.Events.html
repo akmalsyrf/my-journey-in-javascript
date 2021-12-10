@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dom Selection</title>
+    <style>
+      * {
+        border: 2px solid #dedede;
+        padding: 15px;
+        margin: 15px;
+      }
+      html {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        max-width: 600px;
+        margin: 30px auto;
+        font-family: sans-serif;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="judul">Hello World</h1>
+    <div id="container">
+      <section id="a">
+        <p class="p1">paragraf 1</p>
+        <a href="http://instagram.com/ossas">Instagram Ossas</a>
+        <p class="p2">paragraf 2</p>
+        <p class="p3" onclick="ubahWarna()">paragraf 3</p>
+      </section>
+      <section id="b">
+        <p class="p4">paragraf 4</p>
+        <ul>
+          <li>item 1</li>
+          <li>item 2</li>
+          <li>item 3</li>
+        </ul>
+      </section>
+    </div>
+
+    <script>
+      //EVENT HANDLER
+      //1.Inline HTML (lihat p3)
+      const p3 = document.querySelector(".p3");
+      function ubahWarna() {
+        p3.style.backgroundColor = "lightblue";
+      }
+      //2. Element Method
+      const p2 = document.querySelector(".p2");
+      p2.ondblclick = function () {
+        p2.style.backgroundColor = "lightgreen";
+      };
+
+      //addEventListener()
+      const p4 = document.querySelector(".p4");
+      p4.addEventListener("click", function () {
+        const ul = document.querySelector("section#b ul");
+        const liBaru = document.createElement("li");
+        const textLi = document.createTextNode("item baru");
+        liBaru.appendChild(textLi);
+        ul.appendChild(liBaru);
+      });
+    </script>
+  </body>
+</html>

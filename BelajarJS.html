@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Belajar Javascript</title>
+
+    <style>
+      #wrap,
+      #kapan,
+      #hancurkan,
+      #muda {
+        background: blue;
+        color: white;
+        font-size: 50 px;
+        margin-right: 50%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <img src="580b57fcd9996e24bc43c51f.png" alt="google" width="100" height="35" />
+    <button onclick="alert('anda menekan button alert!')">Pencet saja ini</button>
+    <ol>
+      <!--1-->
+      <li><div id="wrap"></div></li>
+      <!--2-->
+      <li><div id="apo"></div></li>
+      <!--3-->
+      <li><div id="abc"></div></li>
+      <!--4-->
+      <li><div id="pq"></div></li>
+      <!--5-->
+      <li><div id="apa"></div></li>
+      <!--6-->
+      <li><div id="dimana"></div></li>
+      <!--7-->
+      <li><div id="kapan"></div></li>
+      <!--8-->
+      <li><div id="mengapa"></div></li>
+      <!--9-->
+      <li><div id="bagaimana"></div></li>
+      <!--10-->
+      <li><div id="kau"></div></li>
+      <!--11-->
+      <li><div id="hancurkan"></div></li>
+      <!--12-->
+      <li><div id="mencuri"></div></li>
+      <!--13-->
+      <li><div id="hatiku"></div></li>
+      <!--14-->
+      <li><div id="hah"></div></li>
+      <!--15-->
+      <li><div id="hih"></div></li>
+      <!--16-->
+      <li><div id="huh"></div></li>
+      <!--17-->
+      <li><div id="heh"></div></li>
+      <!--18-->
+      <li><div id="hoh"></div></li>
+      <!--19-->
+      <li><div id="heuh"></div></li>
+      <!--20-->
+      <li><div id="muda"></div></li>
+      <!--21-->
+      <li><div id="berkelana"></div></li>
+      <!--22-->
+      <li><div id="tua"></div></li>
+      <!--23-->
+      <li><div id="bercerita"></div></li>
+      <!--24-->
+      <li><div id="ayo"></div></li>
+      <!--25-->
+      <li><div id="bangsat"></div></li>
+      <!--26-->
+      <li><div id="banyak"></div></li>
+      <!--27-->
+      <li><div id="belajar"></div></li>
+      <!--28-->
+      <li><div id="ama "></div></li>
+      <!--29-->
+      <li><div id="latihan"></div></li>
+      <!--30-->
+      <li><div id="katanya"></div></li>
+      <!--31-->
+      <li><div id="pengen"></div></li>
+      <!--32-->
+      <li><div id="jadi"></div></li>
+      <!--33-->
+      <li><div id="fullstack"></div></li>
+      <!--34-->
+      <li><div id="developer"></div></li>
+    </ol>
+
+    <script>
+      //basic string dan angka
+      /*News!: variabel var sudah (hampir) tidak digunakan lagi sehingga digantikan dengan let
+               gunakan variabel const untuk membuat variabel yg tetap (tidak dapat diubah)*/
+      let x = "aposehhh";
+      var y = 50 * 50;
+      var p = 100;
+      var q = 2;
+      var desimal = 123.456789;
+
+      var pq = p * q;
+      x = "apadah";
+      /*Cara mengecek tipe data
+        typeof(x);
+        document.getElementById('apo').innerHTML=typeof(x);
+      */
+
+      //metode angka
+      var angka = Math.random().toFixed(3); // object method Math.random hanya memasukkan angka dari 0-1
+      var bilangan = Math.min(0, 1945, 1943, y, p, q, desimal);
+      var angka_lagi = Math.round(231.654); //membulatkan menurut aturan matematika
+      /*var angka_lagi = Math.cell(231.654);---> membulatkan ke angka terbesar
+      var angka_lagi = Math.floor(231.654);---> membulatkan ke angka terkecil*/
+      var angka_angkaan = Math.floor(Math.random() * p) + 1; //artinya: hei! ambil angka random dengan range sebesar p dan dengan nilai minimal 1
+
+      var desimal_baru = desimal.toFixed(2);
+      var desimal_baru2 = p.toString() + desimal;
+
+      //metode String
+      var nama = "Abogoboga";
+      var hancurkan = nama.length;
+      var mencuri = nama.indexOf("o");
+      var qw = nama.lastIndexOf("o");
+      var hatiku = nama.search("bogo");
+      var hah = nama.charAt(1);
+      var hih = nama.toUpperCase();
+      //var huh = nama.toLowerCase();
+      var huh = nama.replace("boga", "sipoyo");
+      var heh = nama.substring(0, 2); //angka pertama: huruf pertama diambil, angka kedua: batas akhir (berdasar hitungan karakter)
+      var hoh = nama.substr(2, 5); // angka pertama : huruf pertama diambil, angka kedua: batas akhir(berdasar jarak dari huruf pertama)
+      var hhh = "120";
+      var heuh = parseInt(hhh) + 10; //jika angka koma gunakan parse.Float
+
+      /*FUNGSI
+      function printText(){
+        alert("ngapain hayoo??");
+        var x ="aa";
+        document.getElementById('ini_id').innerHTML=x;
+      }
+      printText();*/
+
+      //Parameter Fungsi
+      function printText1(nama) {
+        //yang disebut parameter yaitu yg di dalam kurung
+        var text = nama + " 123";
+        document.getElementById("muda").innerHTML = text;
+      }
+      var nama = "cekula";
+      /*20*/ printText1(nama + " baru");
+
+      //Parameter ganda
+      function printText2(nama, nama2) {
+        var text = nama + nama2 + " 123";
+        document.getElementById("berkelana").innerHTML = text;
+      }
+      /*21*/ printText2("sekolah", "gaming");
+
+      //return fungsi
+      function menjumlahkan(angka1, angka2) {
+        return angka1 + angka2;
+      }
+
+      var o = Math.random();
+      var text = /*22*/ menjumlahkan(10, o);
+      document.getElementById("tua").innerHTML = text;
+
+      //SCOPE
+      /*function printText(){
+            var text ="hubla" //local variabel
+            text ="hubla" //global variabel
+          }*/
+
+      //array
+      const answer = '"I think it\'s awesome!" he answered confidently';
+      document.getElementById("bercerita").innerHTML = answer;
+
+      //eksekusi
+      /*1*/ document.getElementById("wrap").innerHTML = "Hello world";
+      /*2*/ document.getElementById("apo").innerHTML = x;
+      /*3*/ document.getElementById("abc").innerHTML = y;
+      /*4*/ document.getElementById("pq").innerHTML = pq;
+      /*5*/ document.getElementById("apa").innerHTML = desimal_baru;
+      /*6*/ document.getElementById("dimana").innerHTML = desimal_baru2;
+      /*7*/ document.getElementById("kapan").innerHTML = angka;
+      /*8*/ document.getElementById("mengapa").innerHTML = bilangan;
+      /*9*/ document.getElementById("bagaimana").innerHTML = angka_lagi;
+      /*10*/ document.getElementById("kau").innerHTML = angka_angkaan;
+      /*11*/ document.getElementById("hancurkan").innerHTML = hancurkan;
+      /*12*/ document.getElementById("mencuri").innerHTML = mencuri;
+      ///*12*/document.getElementById('mencuri').innerHTML=qw;
+      /*13*/ document.getElementById("hatiku").innerHTML = hatiku;
+      /*14*/ document.getElementById("hah").innerHTML = hah;
+      /*15*/ document.getElementById("hih").innerHTML = hih;
+      /*16*/ document.getElementById("huh").innerHTML = huh;
+      /*17*/ document.getElementById("heh").innerHTML = heh;
+      /*18*/ document.getElementById("hoh").innerHTML = hoh;
+      /*19*/ document.getElementById("heuh").innerHTML = heuh;
+    </script>
+  </body>
+</html>

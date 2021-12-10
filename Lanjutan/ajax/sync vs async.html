@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   // synchronous callback
+      //   const trans = [
+      //     {
+      //       merek: "Avanza",
+      //       produsen: "Toyota",
+      //     },
+      //     {
+      //       merek: "Tesla",
+      //       produsen: "Tesla",
+      //     },
+      //     {
+      //       merek: "Xenia",
+      //       produsen: "Daihatsu",
+      //     },
+      //     {
+      //       merek: "Alphard",
+      //       produsen: "Toyota",
+      //     },
+      //   ];
+
+      //   console.log("mulai");
+      //   trans.forEach((t) => {
+      //     for (let i = 0; i < 1000000; i++) {
+      //       let date = new Date();
+      //     }
+      //     console.log(t.merek);
+      //   });
+      //   console.log("selesai");
+
+      // asynchronous callback
+      function getDataTrans(url, success, error) {
+        let xhr = new XMLHttpRequest();
+
+        //mulai ajax
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              success(xhr.response);
+            } else if (xhr.status === 404) {
+              error();
+            }
+          }
+        };
+        xhr.open("get", url);
+        xhr.send();
+        //selesai ajax
+      }
+
+      console.log("mulai");
+      getDataTrans(
+        "async.json",
+        (results) => {
+          console.log(results);
+          const trans = JSON.parse(results);
+          trans.forEach((t) => console.log(t.merek));
+        },
+        () => {}
+      );
+      console.log("selesai");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //method makan dan main masukkan ke object
+      const methodHyumen = {
+        makan: function (porsi) {
+          this.energi += porsi;
+          console.log(`Selamat makan ${this.nama}, energi kamu sekarang ${this.energi}`);
+        },
+        main: function (jam) {
+          this.energi -= jam;
+          console.log(`Kamu sudah bermain selama ${jam} jam, energi kamu sekarang ${this.energi}`);
+        },
+        tidur: function (jam) {
+          this.energi += jam * 2;
+          console.log(`Kamu sudah tidur selama ${jam} jam, energi kamu sekarang ${this.energi}`);
+        },
+      };
+
+      //kita coba masukkan method dengan menggunakan object function declaration
+      function Hyumen(nama, energi) {
+        //let hyumen = {};
+        let hyumen = Object.create(methodHyumen);
+        hyumen.nama = nama;
+        hyumen.energi = energi;
+
+        // hyumen.makan = methodHyumen.makan;
+        // hyumen.main = methodHyumen.main;
+        // hyumen.tidur = methodHyumen.tidur;
+
+        return hyumen;
+      }
+      let otihorih = Hyumen("Otihorih", 8);
+    </script>
+  </body>
+</html>

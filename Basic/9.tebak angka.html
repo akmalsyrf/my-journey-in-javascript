@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      alert("Selamat datang di tebak angka!\nKamu punya 3 kali kesempatan menebak!");
+      //menangkap pilihan komputer
+      var com = Math.floor(Math.random() * 10);
+
+      for (var i = 2; i >= 0; i--) {
+        //menangkap pilihan player
+        var player = parseInt(prompt("Tebak angka dar 0-9"));
+
+        //membuat rules
+        if (player === com) {
+          hasil = "Kamu MENANG!!";
+          i = 0;
+        } else if (com > player) {
+          if (i === 0) {
+            hasil = "Kesempatan kamu sudah habis!";
+          } else {
+            hasil = "Terlalu rendah!\nKamu punya " + i + " kali kesempatan lagi!";
+          }
+        } else if (com < player) {
+          if (i === 0) {
+            hasil = "Kesempatan kamu sudah habis!";
+          } else {
+            hasil = "Terlalu tinggi!\nKamu punya " + i + " kali kesempatan lagi!";
+          }
+        } else {
+          hasil = "Kamu memasukkan karakter yang SALAH!\nKamu punya " + i + " kali kesempatan lagi!";
+        }
+
+        //menampilkan hasil
+        alert(hasil);
+      }
+
+      //closing statement
+      alert("Tebakan kamu: " + player + "\nAngka yang benar: " + com);
+      alert("Terimakasih sudah bermain! :)");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Hiyumen {
+        constructor(nama, energi) {
+          this.nama = nama;
+          this.energi = energi;
+        }
+        makan(porsi) {
+          this.energi += porsi;
+          console.log(`Selamat makan ${this.nama}, energi kamu sekarang ${this.energi}`);
+        }
+        main(jam) {
+          this.energi -= jam;
+          console.log(`Kamu sudah bermain selama ${jam} jam, energi kamu sekarang ${this.energi}`);
+        }
+      }
+
+      let otineb = new Hiyumen("Otineb Inilossum", 5);
+
+      //mungkin class ini terlihat lebih mudah dipahami dan masuk akal bukan? Tapi nyatanya yg terjadi di belakang layar itu sebenarnya sama dengan prototype
+    </script>
+  </body>
+</html>

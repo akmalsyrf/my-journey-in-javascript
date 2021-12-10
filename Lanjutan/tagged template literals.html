@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const nama = "Meliodas";
+      const umur = 69;
+
+      //STEP 1
+      //   function coba(strings, nama, umur) {
+      //     console.log(strings);
+      //     console.log(nama);
+      //     console.log(umur);
+      //   }
+
+      //   STEP 2
+      //   function coba(strings, ...args) {
+      //     console.log(strings);
+      //     console.log(args);
+      //   }
+
+      //   STEP 3
+      //   function coba(strings, ...args) {
+      //     let result = "";
+      //     strings.forEach((str, i) => {
+      //       result += `${str}${args[i] || ""}`;
+      //     });
+      //     console.log(result);
+      //   }
+
+      //   STEP 4
+      function coba(strings, ...args) {
+        console.log(
+          strings.reduce((result, str, i) => {
+            // console.log(`${result} + ${str} + ${args[i] || ""}`);
+            return `${result}${str}${args[i] || ""}`;
+          }, "")
+        );
+      }
+
+      const str = coba`Halo ${nama}, kamu adalah kapten dari seven deadly sins yang berumur ${umur} tahun.`;
+
+      `--------------------------------------------------------------------------------------------------------`;
+
+      `--------------------------------------------------------------------------------------------------------`;
+
+      `--------------------------------------------------------------------------------------------------------`;
+
+      `--------------------------------------------------------------------------------------------------------`;
+
+      `--------------------------------------------------------------------------------------------------------`;
+
+      //PENERAPAN : HIGHLIGHT
+      const name = "Meliodas";
+      const age = 69;
+
+      function highlight(strings, ...args) {
+        document.writeln(
+          strings.reduce((result, str, i) => {
+            return `${result}${str}<span style="background-color:grey; color:white;padding:2px">${args[i] || ""}</span>`;
+          }, "")
+        );
+      }
+      const str2 = highlight`Halo ${name}, kamu adalah kapten dari seven deadly sins yang berumur ${age} tahun.`;
+    </script>
+  </body>
+</html>

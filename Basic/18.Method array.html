@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var arr = ["sugiono", "meliodas", "widodo"];
+
+      //method1: push (menambahkan elemen diakhir array) dan pop (menghapus elemen di akhir array)
+      arr.push("paijo", "Van Den Bosch", "minke");
+      arr.pop(); //berbeda dengan undefined, pop/shift benar2 menghapus elemen tanpa jejak di konsol
+      arr.pop();
+
+      //method2: unshift dan shift (fungsinya sama seperti method sebelumnya, tetapi di awal array)
+      arr.unshift("Naruto", "rikudo sennin");
+      arr.shift();
+      arr.shift();
+
+      //method3: splice
+      //splice(indexAwal, mauDihapusBerapa(patokan: elemen index dipilih), elemenBaru1, elemenBaru2,....., elemenBaruN);
+      arr.splice(2, 0, "matias", "bartolomeus");
+
+      //method4: slice
+      //slice(awal, akhir);
+      //disini make function biar variabel ga kecampur
+      function cobaSlice() {
+        var arr = ["sugiono", "meliodas", "widodo", "paijo", "Van Den Bosch", "minke", "Naruto", "rikudo sennin"];
+        var arr2 = arr.slice(1, 5);
+        return arr2;
+      }
+      console.log(cobaSlice());
+
+      //method5: join
+      console.log(arr.join(" - "));
+
+      //method6: ForEach
+      var angka = [1, 2, 3, 4, 5, 6, 7, 8];
+      //   ga perlu pake ini lagi
+      //   for (var i=0; i<angka; i++){
+      //       console.log(1);
+      //   }
+      console.log("\nmethod forEach:");
+      angka.forEach(function (e) {
+        console.log(e);
+      });
+
+      var nama = ["sugiono", "meliodas", "widodo", "paijo", "Van Den Bosch", "minke", "Naruto", "rikudo sennin"];
+      nama.forEach(function (e, i) {
+        console.log("Mahasiswa ke " + (i + 1) + " adalah " + e);
+      });
+
+      //method7: map
+      var angkaMap = angka.map(function (e) {
+        return e * 2;
+      });
+      console.log("Method map\n" + angkaMap);
+
+      //method8: sort
+      var numb = [1, 2, 6, 5, 3, 1, 4, 7, 9, 7, 5, 4, 3, 6, 5, 7, 6, 5, 32, 9];
+      numb.sort(function (a, b) {
+        return a - b;
+      });
+      console.log("method sort\n" + numb);
+
+      //method9&10: filter dan find
+      var angkaFilter = numb.filter(function (x) {
+        return x > 5;
+      });
+      console.log("method filter\n" + angkaFilter);
+
+      var angkaFind = numb.find(function (x) {
+        return x > 5;
+      });
+      console.log("method find\n" + angkaFind);
+
+      //sebenarnya metode array masih sangat banyak, matengin ini aja dulu sisanya bisa googling
+    </script>
+  </body>
+</html>

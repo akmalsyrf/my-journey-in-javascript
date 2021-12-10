@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const angka = [-1, 4, 5, 9, 7, -6, 2, 3, -2];
+
+      //cari angka > 5 (filter)
+      const hasil = angka
+        .filter((a) => a > 5)
+        //kalikan 3 (map)
+        .map((a) => a * 3) //21, 27
+        //jumlahkan semua (reduce)
+        .reduce((acc, curV) => acc + curV); //48
+
+      console.log(hasil);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //komentar di materi kali ini mencerminkan yg terjadi di belakang layar
+      //kita menggunakan function keyword new
+
+      function Hiyumen(nama, energi) {
+        //let this = Object.create(Hiyumen.prototype);
+        this.nama = nama;
+        this.energi = energi;
+
+        //return this;
+      }
+
+      Hiyumen.prototype.makan = function (porsi) {
+        this.energi += porsi;
+        console.log(`Selamat makan ${this.nama}, energi kamu sekarang ${this.energi}`);
+      };
+      Hiyumen.prototype.main = function (jam) {
+        this.energi -= jam;
+        console.log(`Kamu sudah bermain selama ${jam} jam, energi kamu sekarang ${this.energi}`);
+      };
+
+      let otineb = new Hiyumen("Otineb Inilossum", 5);
+    </script>
+  </body>
+</html>

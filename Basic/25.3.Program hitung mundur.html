@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1></h1>
+    <script>
+      //Program hitung mundur
+      const tglTujuan = new Date("Dec 29,2021 00:00:00").getTime();
+
+      const hitungMundur = setInterval(function () {
+        const sekarang = new Date().getTime();
+
+        const selisih = tglTujuan - sekarang;
+
+        const hari = Math.floor(selisih / (1000 /*detik*/ * 60 /*menit*/ * 60 /*jam*/ * 24) /*hari*/);
+        const jam = Math.floor((selisih % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const menit = Math.floor((selisih % (1000 * 60 * 60)) / (1000 * 60));
+        const detik = Math.floor((selisih % (1000 * 60)) / 1000);
+
+        console.log(hari + ":" + jam + ":" + menit + ":" + detik);
+
+        const teks = document.querySelector("h1");
+        teks.innerHTML = `Waktu Anda tinggal:<br> ${hari} hari ${jam} jam ${menit} menit ${detik} detik`;
+
+        if (selisih < 0) {
+          clearInterval(hitungMundur);
+          teks.innerHTML = "Waktu anda HABIS!!";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>

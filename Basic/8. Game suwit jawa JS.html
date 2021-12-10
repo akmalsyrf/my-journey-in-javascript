@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      alert("Selamat datang di simulasi permainan suwit jawa vs komputer!");
+      //looping
+      for (var lagi = true; lagi === true; lagi = confirm("Mainkan lagi?")) {
+        //menangkap pilihan player
+        var player = prompt("Masukkan pilihan anda: \n (semut, orang, atau gajah)");
+
+        //menangkap pilihan computer
+        //membangkitkan pilihan random
+        var com = Math.random();
+
+        if (com < 0.33) {
+          com = "gajah";
+        } else if (com >= 0.33 && com < 0.66) {
+          com = "orang";
+        } else {
+          com = "semut";
+        }
+        var hasil = "";
+        //menentukan rules
+        if (player == com) {
+          hasil = "SERI!";
+        } else if (player === "semut") {
+          //jika menggunakan if else
+          if (com === "orang") {
+            hasil = "KALAH!";
+          } else {
+            hasil = "MENANG!";
+          }
+        } else if (player === "orang") {
+          //jika menggunakan operator ternary
+          hasil = com === "semut" ? "MENANG!" : "KALAH!";
+        } else if (player === "gajah") {
+          hasil = com === "semut" ? "KALAH!" : "MENANG";
+        } else {
+          hasil = "memilih pilihan yang salah!";
+        }
+
+        //tampilkan hasilnya
+        alert("Kamu memilih: " + player + "\ndan komputer memilih: " + com + "\nkamu " + hasil);
+      }
+      alert("terimakasih telah bermain :)");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="html"></div>
+    <script>
+      // var a = "";
+      // for (var b = 0; b < 11; b++) {
+      //   for (var c = 0; c <= b; c++) {
+      //     a += "*";
+      //   }
+      //   a += "<br>";
+      // }
+      // for (var d = 10; d > 0; d--) {
+      //   for (var e = 0; e < d; e++) /*kolom*/ {
+      //     a += "*";
+      //   }
+      //   a += "<br>";
+      // }
+      // document.getElementById("html").innerHTML = a;
+
+      //latihan1 (segitiga terbalik)
+      var s = "";
+      for (var i = 10; i > 0; i--) {
+        for (var j = 10; j > i; j--) {
+          s += " ";
+        }
+        for (var k = 0; k < i; k++) {
+          s += "*";
+        }
+        s += "<br>";
+      }
+      document.writeln(s);
+
+      //latihan2 (gabungan dua segitiga)
+      var s = "";
+      for (var i = 10; i > 0; i--) {
+        for (var j = 10; j >= i; j--) {
+          s += "*";
+        }
+        s += "<br>";
+      }
+      for (var k = 9; k > 0; k--) {
+        for (var m = 0; m < k; m++) {
+          s += "*";
+        }
+        s += "<br>";
+      }
+      document.writeln(s);
+
+      //latihan3 (segitiga sama kaki)
+      var s = "";
+      for (var i = 5; i > 0; i--) {
+        for (var j = 1; j < i; j++) {
+          s += " ";
+        }
+        for (var k = 5; k > j; k--) {
+          s += "*";
+        }
+        for (var l = 5; l >= k; l--) {
+          s += "*";
+        }
+        s += "<br>";
+      }
+      document.writeln(s);
+
+      //latihan4 (belah ketupat)
+      var s = "";
+      for (var i = 10; i > 0; i--) {
+        for (var j = 1; j < i; j++) {
+          s += " ";
+        }
+        for (var k = 10; k > j; k--) {
+          s += "*";
+        }
+        for (var l = 10; l >= k; l--) {
+          s += "*";
+        }
+        s += "<br>";
+      }
+      for (var m = 9; m > 0; m--) {
+        for (var n = 10; n > m; n--) {
+          s += " ";
+        }
+        for (var o = 0; o < m; o++) {
+          s += "*";
+        }
+        for (var p = 1; p < o; p++) {
+          s += "*";
+        }
+        s += "<br>";
+      }
+      document.writeln(s);
+
+      //Latihan5 (papan catur)
+      var s = "";
+      for (var i = 10; i > 0; i--) {
+        for (var j = 5; j > 0; j--) {
+          if (i % 2 == 0) {
+            s += "# ";
+          } else {
+            s += " #";
+          }
+        }
+        s += "<br>";
+      }
+      document.writeln(s);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1.OBJECT LITERAL
+      var jerman = {
+        nama: "Floda Reltih",
+        lulusan: "Sekolah kesenian Munich",
+        bidang: "Seni lukis",
+        tahunAktif: 1945,
+        iPSemester: [2.9, 3.1, 3.25, 2.88, 3.04],
+        IPKumulatif: function () {
+          var total = 0;
+          var ips = this.iPSemester;
+          for (var i = 0; i < ips.length; i++) {
+            total += ips[i];
+          }
+          return total / ips.length;
+        },
+        motto: "Hiduplah dalam ambisimu, kejar cita-citamu. Jangan batasi dirimu dengan batas teritorial tak nampak.",
+        alamat: {
+          jalan: "jl.in aja dulu siapa tau cocok",
+          kota: "Munich",
+          provinsi: "Eropa Barat banget",
+        },
+      };
+
+      /*cara memanggil data
+      jerman.IPKumulatif();
+      jerman.IPSemester[0]
+      jerman.alamat.kota*/
+
+      //2.FUNCTION DECLARATION
+      function objectReltih(nama, lulusan, bidang, tahunAktif, IPSemester, motto) {
+        var jerman = {};
+        jerman.nama = nama;
+        jerman.lulusan = lulusan;
+        jerman.bidang = bidang;
+        jerman.tahunAktif = tahunAktif;
+        jerman.IPSemester = iPSemester;
+        (jerman.IPKumulatif = function () {
+          var total = 0;
+          var ips = this.IPSemester;
+          for (var i = 0; i < ips.length; i++) {
+            total += ips[i];
+          }
+          return total / ips.length;
+        }),
+          (jerman.motto = motto);
+        return jerman;
+      }
+
+      var ngisi = objectReltih("Floda Reltih", "Sekolah kesenian Munich", "Seni lukis", 1945, [2.9, 3.1, 3.25, 2.88, 3.04], "Hiduplah dalam ambisimu, kejar cita-citamu. Jangan batasi dirimu dengan batas teritorial tak nampak.");
+
+      //3.CONSTRUCTOR CREATE (KEYWORD 'NEW')
+      //nama fungsi diawali huruf besar (kebiasaan para programer)
+      function Reltih(nama, lulusan, bidang, tahunAktif, IPSemester, motto) {
+        this.nama = nama;
+        this.lulusan = lulusan;
+        this.bidang = bidang;
+        this.tahunAktif = tahunAktif;
+        this.IPSemester = IPSemester;
+        this.IPKumulatif = function () {
+          var total = 0;
+          var ips = this.iPSemester;
+          for (var i = 0; i < ips.length; i++) {
+            total += ips[i];
+          }
+          return total / ips.length;
+        };
+        this.motto = motto;
+      }
+      var ngisi2 = new Reltih("Floda Reltih", "Sekolah kesenian Munich", "Seni lukis", 1945, [2.9, 3.1, 3.25, 2.88, 3.04], "Hiduplah dalam ambisimu, kejar cita-citamu. Jangan batasi dirimu dengan batas teritorial tak nampak.");
+
+      //4.object.create()
+    </script>
+  </body>
+</html>

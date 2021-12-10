@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var tanya = parseInt(prompt("Kamu mau solat apa?(isi dengan angka)\n1.subuh\n2.dzuhur\n3.ashar\n4.magrib\n5.isya"));
+
+      function ganjil(e) {
+        var rakaat1 = ["bersedekap", "baca alfatihah", "ruku'", "i'tidal", "sujud", "duduk diantara dua sujud", "sujud", "berdiri"];
+        if (e === "awal") {
+          rakaat1.unshift("takbirotul ihrom");
+          rakaat1.splice(2, 0, "baca iftitah");
+          rakaat1.splice(4, 0, "baca surah");
+          alert(rakaat1.join("\n"));
+        } else {
+          alert(rakaat1.join("\n"));
+        }
+      }
+      function genap(e) {
+        var rakaat2 = ["bersedekap", "baca alfatihah", "baca surah", "ruku'", "i'tidal", "sujud", "duduk diantara dua sujud", "sujud"];
+        if (i === "subuh") {
+          rakaat2.splice(5, 0, "baca qunut");
+          rakaat2.push("tahiyat " + e);
+          alert(rakaat2.join("\n"));
+        } else if (e === "akhir") {
+          rakaat2.splice(2, 1);
+          rakaat2.push("tahiyat " + e);
+          alert(rakaat2.join("\n"));
+        } else {
+          rakaat2.push("tahiyat awal", "berdiri");
+          alert(rakaat2.join("\n"));
+        }
+      }
+
+      var dua = function () {
+        ganjil("awal");
+        genap("akhir");
+      };
+
+      var empat = function () {
+        //lawak bener njir malah jadi panjang gini wkwkwk
+        //gapapa lah, mayan buat ngasah logika
+        for (var p = 1; p <= 4; p++) {
+          if (p % 2 === 1) {
+            if (p === 1) {
+              ganjil("awal");
+            } else {
+              ganjil();
+            }
+          } else if (p % 2 === 0) {
+            if (p === 2) {
+              genap();
+            } else {
+              genap("akhir");
+            }
+          }
+        }
+        return;
+      };
+
+      var tiga = function () {
+        ganjil("awal");
+        genap();
+        genap("akhir");
+      };
+
+      if (tanya === 1) {
+        i = "subuh";
+        alert("Kamu akan melaksanakan solat " + i + "!");
+        console.log(dua());
+      } else if (tanya === 2) {
+        i = "dzuhur";
+        alert("Kamu akan melaksanakan solat " + i + "!");
+        console.log(empat());
+      } else if (tanya === 3) {
+        i = "ashar";
+        alert("Kamu akan melaksanakan solat " + i + "!");
+        console.log(empat());
+      } else if (tanya === 4) {
+        i = "magrib";
+        alert("Kamu akan melaksanakan solat " + i + "!");
+        console.log(tiga());
+      } else if (tanya === 5) {
+        i = "isya";
+        alert("Kamu akan melaksanakan solat " + i + "!");
+        console.log(empat());
+      } else {
+        alert("kafirr ente!!!");
+      }
+
+      alert("Alhamdulillah akhi, semoga istiqomah");
+    </script>
+  </body>
+</html>

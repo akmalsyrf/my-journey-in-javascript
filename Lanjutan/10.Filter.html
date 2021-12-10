@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const angka = [-1, 4, 5, 9, 7, -6, 2, 3, -2];
+      //mencari angka >=3
+
+      //for biasa
+      //   const newAngka = [];
+      //   for (let i = 0; i < angka.length; i++) {
+      //     if (angka[i] >= 3) {
+      //       newAngka.push(angka[i]);
+      //     }
+      //   }
+
+      //filter
+      //   const newAngka = angka.filter(function (a) {
+      //     return a > 3;
+      //   });
+      const newAngka = angka.filter((a) => a > 3);
+      console.log(newAngka);
+    </script>
+  </body>
+</html>

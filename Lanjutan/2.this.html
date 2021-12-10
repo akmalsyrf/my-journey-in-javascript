@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        //JIKA DI SCOPE GLOBAL
+
+        //1
+        var a = 10;
+        console.log(this.a);
+
+        //2 function declaration
+        function halo() {
+          console.log(this);
+          console.log("halo");
+        }
+      //   halo();
+        //atau bisa kita tulis dengan cara
+      //   this.halo();
+
+        //bandingkan dengan ini
+        var a = 10;
+        console.log(this.a);
+        //kenapa bisa sama dengan this? cek saja
+        console.log(this === window);
+        //artinya this di scope global sama seperti window, berfungsi mengembalikan object global
+
+
+        //JIKA DI SCOPE LOKAL
+
+        //3.object literal
+        var obj={a:10, nama ='orang'};
+        obj.halo = function(){
+            console.log(this);
+            console.log('halo');
+        }
+      //   obj.halo();
+        //artinya this mengembalikan object yang bersangkutan
+
+        //4.constructor
+        function halo(){
+            console.log(this);
+            console.log('halo');
+        }
+      //   new.halo();
+      //   var obj1 =new.halo();
+      //   var obj2 = new.halo();
+        //this mengembalikan object yang baru dibuat
+    </script>
+  </body>
+</html>

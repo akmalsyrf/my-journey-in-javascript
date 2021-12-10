@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //FOR IN : dapat digunakan untuk object dan array
+      const person = {
+        saha: "Fulan",
+        kumaha: "Embuh",
+      };
+      for (const property in person) {
+        document.writeln(`<p>${property} : ${person[property]}</p>`);
+      }
+
+      //FOR OF : hanya digunakan untuk iterable (anti object2 kleb, coz object tida iterable)
+      const str = "Saya belajar JS";
+      for (const e of str) {
+        document.writeln(`${e} `);
+      }
+      const arr = ["meliodas", "sparta"];
+      for (const e of arr) {
+        document.writeln(`<p>${e}</p>`);
+      }
+    </script>
+  </body>
+</html>
